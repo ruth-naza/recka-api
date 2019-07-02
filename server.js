@@ -18,10 +18,8 @@ app.use(cors());
 const db = knex({
   client: 'pg',
   connection: {
-    host : 'postgresql-aerodynamic-48985',
-    user : 'naza',
-    password : '',
-    database : 'recka'
+    host : process.env.DATABASE_URL,
+    ssl: true
   }
 });
 
